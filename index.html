@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="DataShow">
+  <head>
+    <title>TEST</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script type="text/javascript" src="socket.io/socket.io.js"></script>
+    <script>
+      var app = angular.module('DataShow', []);
+      var socket = io();
+
+      app.controller('DataValue', ['$scope', function($scope) {
+        socket.on('datavalue', function(datavalue) {
+          $scope.$apply(function(){
+            $scope.data = datavalue;
+          });
+        });
+      }]);
+    </script>
+  </head>
+  <body>
+    <div ng-controller="DataValue">
+      {{data}}
+    </div>
+  </body>
+</html>
