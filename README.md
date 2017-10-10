@@ -12,6 +12,9 @@ var Serialport = new serialPort("<PortNumber>", { //PortNumber check
 ```
 
 Install npm
+
 Install socket.io
+
 Install nodeJS
+
 Install angularJS
